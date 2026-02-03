@@ -1,9 +1,29 @@
 # Sports Card Price Tracker
 
-A comprehensive Python tool for tracking sports card prices, managing inventory, and finding profitable deals for eBay reselling.
+A comprehensive tool for tracking sports card prices, managing inventory, and finding profitable deals for eBay reselling. Available as both a Python CLI tool and a modern web application.
+
+## 🌐 Web Application
+
+**NEW!** Now available as a web application that deploys to Netlify!
+
+- 🚀 **Live Dashboard** - Visual overview of your inventory and profits
+- 🔍 **Card Search** - Search thousands of cards with real-time pricing
+- 💡 **Deal Finder** - Automatically identify profitable opportunities
+- 📦 **Inventory Manager** - Track purchases and current values
+- 💰 **Profit Calculator** - Calculate eBay fees and ROI
+- 📊 **Sales Tracker** - Record sales and track performance
+- 📈 **Monthly Reports** - Charts and analytics for your business
+- 📱 **Mobile-Responsive** - Works on desktop, tablet, and mobile
+
+### Quick Deploy to Netlify
+
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/gopforever/sportscardtracker)
+
+See [DEPLOYMENT.md](DEPLOYMENT.md) for detailed deployment instructions.
 
 ## Features
 
+### Python CLI Tool
 - 🔍 **SportsCardsPro API Integration** - Fetch real-time card prices and data
 - 💾 **SQLite Database** - Track price history and inventory
 - 💰 **Profit Calculator** - Calculate potential and actual profits including eBay fees
@@ -13,12 +33,42 @@ A comprehensive Python tool for tracking sports card prices, managing inventory,
 
 ## Installation
 
-### Prerequisites
+### Web Application
+
+The easiest way to get started is to deploy the web application to Netlify:
+
+1. **Deploy to Netlify** (see [DEPLOYMENT.md](DEPLOYMENT.md))
+   - Connect your GitHub repository
+   - Add your SportsCardsPro API token as an environment variable
+   - Deploy!
+
+2. **Local Development**
+   ```bash
+   # Clone the repository
+   git clone https://github.com/gopforever/sportscardtracker.git
+   cd sportscardtracker
+   
+   # Install dependencies
+   npm install
+   
+   # Create .env file
+   cp .env.example .env
+   # Edit .env and add your API token
+   
+   # Run development server
+   npm run functions:dev
+   ```
+
+### Python CLI Tool
+
+If you prefer the command-line interface:
+
+#### Prerequisites
 
 - Python 3.9 or higher
 - pip (Python package installer)
 
-### Setup
+#### Setup
 
 1. Clone the repository:
 ```bash
@@ -52,7 +102,52 @@ api:
 
 ## Usage
 
-### Quick Start
+### Web Application
+
+Once deployed, access your web application at your Netlify URL:
+
+**Dashboard (`/`)**
+- View total inventory value
+- See month-to-date profit
+- Track progress toward monthly goal
+- Quick stats and charts
+
+**Card Search (`/search`)**
+- Search for any sports card
+- View all grade prices (PSA 10, BGS 10, Ungraded, etc.)
+- Add cards to inventory directly
+
+**Deal Finder (`/deals`)**
+- Set minimum ROI threshold
+- Filter by sport/genre
+- See recommended buy prices
+- Calculate potential profits
+
+**Inventory Manager (`/inventory`)**
+- View all your cards
+- Track purchase prices and current values
+- See potential profits
+- Edit or delete items
+
+**Profit Calculator (`/calculator`)**
+- Enter purchase and sale prices
+- Calculate eBay fees automatically
+- See net profit and ROI
+- Compare multiple scenarios
+
+**Sales Tracker (`/sales`)**
+- Record completed sales
+- View sales history
+- Track actual profits
+- See ROI for each sale
+
+**Monthly Reports (`/reports`)**
+- Select any month
+- View sales performance
+- See charts and analytics
+- Track goal progress
+
+### Python CLI Quick Start
 
 ```bash
 # Search for cards
@@ -438,17 +533,76 @@ For issues or questions:
 - Check existing issues for solutions
 - Review the documentation
 
+## Technology Stack
+
+### Web Application
+- **Frontend:** React 18, Vite, Tailwind CSS
+- **Backend:** Netlify Functions (Node.js)
+- **Storage:** Netlify Blob Storage
+- **Routing:** React Router
+- **Charts:** Recharts
+- **API Client:** Axios
+- **Deployment:** Netlify
+
+### Python CLI
+- **Language:** Python 3.9+
+- **Database:** SQLite
+- **API Client:** Requests
+- **CLI Framework:** Click
+- **Data Processing:** Pandas
+
+## Project Structure
+
+```
+sportscardtracker/
+├── netlify/
+│   └── functions/          # Serverless functions
+│       ├── search-cards.js
+│       ├── get-card.js
+│       ├── find-deals.js
+│       ├── inventory.js
+│       ├── calculate-profit.js
+│       ├── record-sale.js
+│       ├── reports.js
+│       └── utils/          # Shared utilities
+├── src/
+│   ├── components/         # React components
+│   ├── hooks/              # Custom React hooks
+│   ├── utils/              # Frontend utilities
+│   ├── api/                # Python API client
+│   ├── calculator/         # Python profit calculator
+│   ├── database/           # Python database models
+│   ├── tracker/            # Python tracking logic
+│   ├── App.jsx             # Main React app
+│   ├── main.jsx            # React entry point
+│   └── index.css           # Global styles
+├── public/                 # Static assets
+├── tests/                  # Python tests
+├── netlify.toml            # Netlify configuration
+├── vite.config.js          # Vite build config
+├── package.json            # Node.js dependencies
+├── requirements.txt        # Python dependencies
+├── DEPLOYMENT.md           # Deployment guide
+└── README.md               # This file
+```
+
 ## Roadmap
 
+Completed:
+- [x] Web interface
+- [x] Advanced analytics and charts
+- [x] Real-time profit tracking
+- [x] Mobile-responsive design
+- [x] Cloud deployment (Netlify)
+
 Future enhancements:
-- [ ] Web interface
 - [ ] Price alerts via email
 - [ ] eBay API integration for automatic listing
-- [ ] Advanced analytics and charts
-- [ ] Mobile app
+- [ ] Mobile app (PWA)
 - [ ] Multi-user support
 - [ ] Automated grading cost analysis
 - [ ] Integration with other marketplaces
+- [ ] Advanced AI-powered deal recommendations
 
 ---
 
