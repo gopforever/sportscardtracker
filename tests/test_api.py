@@ -1,8 +1,14 @@
 """Tests for SportsCardsPro API client."""
 
 import unittest
+import sys
+from pathlib import Path
 from unittest.mock import Mock, patch
-from src.api.sportscardspro import SportsCardsProAPI, APIError
+
+# Add src to path
+sys.path.insert(0, str(Path(__file__).parent.parent / 'src'))
+
+from api.sportscardspro import SportsCardsProAPI, APIError
 
 
 class TestSportsCardsProAPI(unittest.TestCase):
@@ -18,7 +24,7 @@ class TestSportsCardsProAPI(unittest.TestCase):
         self.assertEqual(self.api.base_url, "https://test.example.com")
         self.assertEqual(self.api.max_retries, 3)
 
-    @patch('src.api.sportscardspro.requests.Session.get')
+    @patch('api.sportscardspro.requests.Session.get')
     def test_get_product_by_id(self, mock_get):
         """Test fetching product by ID."""
         mock_response = Mock()
@@ -38,7 +44,7 @@ class TestSportsCardsProAPI(unittest.TestCase):
         self.assertEqual(result['status'], 'success')
         mock_get.assert_called_once()
 
-    @patch('src.api.sportscardspro.requests.Session.get')
+    @patch('api.sportscardspro.requests.Session.get')
     def test_api_error_handling(self, mock_get):
         """Test API error handling."""
         mock_response = Mock()

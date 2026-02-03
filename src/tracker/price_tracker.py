@@ -6,9 +6,9 @@ This module manages price tracking functionality.
 
 from datetime import datetime
 from typing import Dict, List, Any
-from ..database.models import Database
-from ..database.operations import CardOperations, PriceHistoryOperations
-from ..api.sportscardspro import SportsCardsProAPI
+from database.models import Database
+from database.operations import CardOperations, PriceHistoryOperations
+from api.sportscardspro import SportsCardsProAPI
 
 
 class PriceTracker:

@@ -4,7 +4,7 @@ Profit Calculator
 This module provides utilities for calculating profits and ROI.
 """
 
-from typing import Dict, Any
+from typing import Dict, Any, Optional
 
 
 class ProfitCalculator:

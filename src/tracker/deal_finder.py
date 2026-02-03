@@ -5,9 +5,9 @@ This module identifies profitable buying opportunities.
 """
 
 from typing import Dict, List, Any, Optional
-from ..database.models import Database
-from ..database.operations import PriceHistoryOperations
-from ..calculator.profit_calculator import ProfitCalculator
+from database.models import Database
+from database.operations import PriceHistoryOperations
+from calculator.profit_calculator import ProfitCalculator
 
 
 class DealFinder:

@@ -1,7 +1,13 @@
 """Tests for profit calculator."""
 
 import unittest
-from src.calculator.profit_calculator import ProfitCalculator
+import sys
+from pathlib import Path
+
+# Add src to path
+sys.path.insert(0, str(Path(__file__).parent.parent / 'src'))
+
+from calculator.profit_calculator import ProfitCalculator
 
 
 class TestProfitCalculator(unittest.TestCase):
@@ -41,7 +47,8 @@ class TestProfitCalculator(unittest.TestCase):
         result = self.calculator.calculate_profit(5000, 10000, 1000)
         
         self.assertEqual(result['shipping_cost'], 1000)
-        self.assertEqual(result['net_profit'], 3670)
+        # Net = Sale - Purchase - Fees - Shipping = 10000 - 5000 - 1330 - 1000 = 2670
+        self.assertEqual(result['net_profit'], 2670)
 
     def test_calculate_actual_profit(self):
         """Test actual profit calculation."""

@@ -3,10 +3,16 @@
 import unittest
 import tempfile
 import os
+import sys
+from pathlib import Path
 from unittest.mock import Mock, patch
-from src.database.models import Database
-from src.tracker.price_tracker import PriceTracker
-from src.api.sportscardspro import SportsCardsProAPI
+
+# Add src to path
+sys.path.insert(0, str(Path(__file__).parent.parent / 'src'))
+
+from database.models import Database
+from tracker.price_tracker import PriceTracker
+from api.sportscardspro import SportsCardsProAPI
 
 
 class TestPriceTracker(unittest.TestCase):
