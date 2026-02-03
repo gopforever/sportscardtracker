@@ -387,5 +387,5 @@ class InventoryOperations:
             'total_revenue': row['total_revenue'] or 0,
             'total_cost': row['total_cost'] or 0,
             'total_fees': row['total_fees'] or 0,
-            'total_profit': row['net_profit'] or 0
+            'total_profit': row['total_profit'] or 0
         }
