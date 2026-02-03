@@ -1,0 +1,17 @@
+api:
+  token: "YOUR_TOKEN_HERE"
+  base_url: "https://www.sportscardspro.com"
+  
+business:
+  ebay_fee_percent: 13.0
+  ebay_transaction_fee: 0.30
+  default_shipping_cost: 5.00
+  min_profit_margin: 10.0  # minimum % profit to consider
+  
+tracking:
+  update_interval_hours: 24
+  price_drop_alert_percent: 10.0
+  
+goals:
+  march_2026_target: 100.00
+  monthly_growth_percent: 20.0
