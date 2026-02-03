@@ -158,7 +158,10 @@ const Reports = () => {
                 <XAxis 
                   dataKey="date" 
                   tick={{ fontSize: 12 }}
-                  tickFormatter={(date) => new Date(date).getDate().toString()}
+                  tickFormatter={(date) => {
+                    const d = new Date(date);
+                    return `${d.getMonth() + 1}/${d.getDate()}`;
+                  }}
                 />
                 <YAxis tick={{ fontSize: 12 }} />
                 <Tooltip 
@@ -200,6 +203,7 @@ const Reports = () => {
                   outerRadius={100}
                   fill="#8884d8"
                   dataKey="count"
+                  aria-label="Sales distribution by platform"
                 >
                   {reportData.sales_by_platform.map((entry, index) => (
                     <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
@@ -249,6 +253,7 @@ const Reports = () => {
                   outerRadius={100}
                   fill="#8884d8"
                   dataKey="count"
+                  aria-label="Profit distribution by range"
                 >
                   {reportData.profit_distribution.map((entry, index) => (
                     <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />

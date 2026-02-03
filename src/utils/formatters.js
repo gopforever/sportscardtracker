@@ -43,7 +43,11 @@ export const formatPercentage = (value) => {
  * @returns {number} - Amount in cents
  */
 export const dollarsToCents = (dollars) => {
-  return Math.round(parseFloat(dollars) * 100);
+  const parsed = parseFloat(dollars);
+  if (isNaN(parsed)) {
+    return 0;
+  }
+  return Math.round(parsed * 100);
 };
 
 /**
